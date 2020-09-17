@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLaunchInfoQuery } from '../../generated/graphql'
-import LaunchContainer from '../Launch';
+
 
 import LaunchDetail from './LaunchDetails'
 

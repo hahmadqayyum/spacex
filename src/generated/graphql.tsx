@@ -826,7 +826,7 @@ export type LaunchesLazyQueryHookResult = ReturnType<typeof useLaunchesLazyQuery
 export type LaunchesQueryResult = Apollo.QueryResult<LaunchesQuery, LaunchesQueryVariables>;
 export const LaunchInfoDocument = gql`
     query LaunchInfo($id: String) {
-  launch(id: "13") {
+  launch(id: $id) {
     links {
       flickr_images
       video_link

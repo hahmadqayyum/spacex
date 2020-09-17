@@ -2,7 +2,7 @@ import gql from 'graphql-tag'
 //query LaunchInfo can be any name
 export const LAUNCHDETAILS_QUERY = gql`
     query LaunchInfo($id: String){
-        launch(id: "13") {
+        launch(id: $id) {
         links {
             flickr_images
             video_link

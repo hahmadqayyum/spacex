@@ -1,11 +1,16 @@
 import React, { FC } from 'react'
 import { LaunchesQuery } from '../../generated/graphql'
 
-interface Props {
-    data: LaunchesQuery
+export interface ownProp {
+    handleidChange: (id: any) => void
 }
 
-const Launch: FC<Props> = ({ data }) => {
+interface Props {
+    data: LaunchesQuery,
+    handleidChange: (id: any) => void
+}
+
+const Launch: FC<Props> = ({ data, handleidChange }) => {
     return (
         <div>
             <div>All SpaceX Launches</div>
@@ -14,7 +19,10 @@ const Launch: FC<Props> = ({ data }) => {
                     !!data.launches && data.launches.map(
                         (launches, i) => {
                             return (
-                                <li key={i} >
+                                <li
+                                    key={i}
+                                    onClick={() => handleidChange(launches?.mission_id)}
+                                >
                                     {launches?.mission_name} - {launches?.rocket?.rocket_name}
                                     {/* year: {launches.} */}
                                     success: {launches?.launch_success}
