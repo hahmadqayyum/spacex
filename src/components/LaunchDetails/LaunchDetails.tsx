@@ -20,7 +20,7 @@ const LaunchDetail: FC<Props> = ({ data }) => {
                 success: {data.launch?.launch_success}
                 rocket: {data.launch?.rocket?.rocket_name}
                 Details: <br />
-                {data.launch?.details}
+                {data.launch.details}
                 {/* Images: {data.launch?.links?.flickr_images?.map(image => {
                     <img src={image} />
                 })} */}

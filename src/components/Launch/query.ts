@@ -1,12 +1,13 @@
 import gql from 'graphql-tag'
 
 
-export const LAUNCH_QUERY = gql `
+export const LAUNCH_QUERY = gql`
 query Launches {
     launches {
       mission_name
       details
       mission_id
+      flight_number
       launch_site {
         site_name
       }

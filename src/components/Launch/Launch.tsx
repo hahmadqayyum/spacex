@@ -5,9 +5,8 @@ export interface ownProp {
     handleidChange: (id: any) => void
 }
 
-interface Props {
+interface Props extends ownProp {
     data: LaunchesQuery,
-    handleidChange: (id: any) => void
 }
 
 const Launch: FC<Props> = ({ data, handleidChange }) => {
@@ -21,8 +20,8 @@ const Launch: FC<Props> = ({ data, handleidChange }) => {
                             return (
                                 <li
                                     key={i}
-                                    onClick={() => handleidChange(launches?.mission_id)}
                                 >
+                                    <button onClick={() => handleidChange(launches?.flight_number!)} >launch</button>
                                     {launches?.mission_name} - {launches?.rocket?.rocket_name}
                                     {/* year: {launches.} */}
                                     success: {launches?.launch_success}

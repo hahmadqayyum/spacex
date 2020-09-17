@@ -5,7 +5,6 @@ import Launch, { ownProp } from './Launch'
 const LaunchContainer = (props: ownProp) => {
     const { data, error, loading } = useLaunchesQuery();
     if (error || !data) {
-        1
         return <div>error..</div>
     }
     if (loading) {
